@@ -1,0 +1,24 @@
+{
+  "name": "social_layover",
+  "version": "1.0.0",
+  "description": "connecting people with layovers/delayed flights",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gnaoh/sociallayover.git"
+  },
+  "keywords": [
+    "layover",
+    "flights",
+    "delay"
+  ],
+  "author": "Peter Hoang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gnaoh/sociallayover/issues"
+  },
+  "homepage": "https://github.com/Gnaoh/sociallayover#readme"
+}
