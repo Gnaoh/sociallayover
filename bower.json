@@ -1,0 +1,28 @@
+{
+  "name": "social_layover",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/Gnaoh/sociallayover",
+  "authors": [
+    "phonghoang@gmail.com <phonghoang@gmail.com>"
+  ],
+  "description": "connecting people with layovers/delayed flights",
+  "keywords": [
+    "layover",
+    "flight",
+    "delay"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3"
+  }
+}
