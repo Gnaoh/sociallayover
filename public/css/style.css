@@ -18,7 +18,7 @@ a, a:hover, a:focus {
 
 h1, h2 {
 	margin-top: 10px;
-	font-size: 38px;
+	font-size: 45px;
     font-weight: 100;
     color: #555;
     line-height: 50px;
@@ -31,7 +31,10 @@ h3 {
     line-height: 30px;
 }
 
-img { max-width: 100%; }
+img { 
+  max-width: 100%;
+  opacity: 0.7;
+ }
 
 ::-moz-selection { background: #fd625e; color: #fff; text-shadow: none; }
 ::selection { background: #fd625e; color: #fff; text-shadow: none; }
@@ -42,14 +45,17 @@ img { max-width: 100%; }
 	height: 50px;
 	margin: 0 5px;
 	padding: 16px 20px 0 20px;
-	background: #fd625e;
+	background: #2C3331;
 	font-size: 16px;
     font-weight: 300;
     line-height: 16px;
     color: #fff;
     -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
+    opacity: 0.7;
+    filter: alpha(opacity=40);
 }
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 0.6; color: #fff; }
+
+.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 1.0; color: #fff; }
 
 
 /***** Content *****/
@@ -72,7 +78,7 @@ img { max-width: 100%; }
 
 .top-content .text h1 {
 	margin-top: 30px;
-	color: #fff;
+	color: #2C3331;
 }
 
 .top-content .description {

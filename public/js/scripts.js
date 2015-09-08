@@ -1,22 +1,16 @@
 
 jQuery(document).ready(function() {
 	
-    /*
-        Fullscreen background
-    */
+//Fullscreen background
     $.backstretch("/static/img/background.jpg");
-    
-    /*
-	    Modals
-	*/
+
+//Modals
 	$('.launch-modal').on('click', function(e){
 		e.preventDefault();
 		$( '#' + $(this).data('modal-id') ).modal();
 	});
-    
-    /*
-        Form validation
-    */
+
+//Form validation
     $('.registration-form input[type="text"], .registration-form textarea').on('focus', function() {
     	$(this).removeClass('input-error');
     });
@@ -34,6 +28,4 @@ jQuery(document).ready(function() {
     	});
     	
     });
-    
-    
 });
