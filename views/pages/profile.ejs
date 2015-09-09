@@ -1,6 +1,6 @@
 <h1>Profile</h1>
 
-Hello <%= user.email %>!
+Hello <%= user.firstName %>!
 
 <!-- have the server treat this as a delete request using query params & method-override (html forms can only technically submit get & post requests, so we have to simulate a delete) -->
 <form method="post" action="/logout?_method=DELETE">

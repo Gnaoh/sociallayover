@@ -58,7 +58,9 @@ app.use(function (req, res, next) {
               ROUTES
 ========================================*/
 
-
+app.get("/main", function(req, res) {
+res.render("pages/main")
+});
 
 // login route
 app.get("/login", function (req, res) {
@@ -75,11 +77,15 @@ app.get(["/", "/signup"], function (req, res) {
 app.post(["/users", "/signup"], function signup(req, res) {
   // grab the user from the params
   var user = req.body.user;
-  // pull out their email & password
-  var email = user.email;
+  // pull out their information
+  var firstName = user.firstName;
+  var lastName = user.lastName;
+  var userName = user.userName;
   var password = user.password;
+  var about = user.about;
   // create the new user
-  db.User.createSecure(email, password, function(err, user) {
+  db.User.createSecure(firstName, lastName, userName, password, about, function(err, user) {
+    if (err) {return console.log(err);}
     req.login(user);
     res.redirect("/profile"); 
   });
@@ -88,11 +94,15 @@ app.post(["/users", "/signup"], function signup(req, res) {
 // where the user submits the login form
 app.post(["/sessions", "/login"], function login(req, res) {
   var user = req.body.user;
-  var email = user.email;
+  var userName = user.userName;
   var password = user.password;
-  db.User.authenticate(email, password, function (err, user) {
+  console.log(userName);
+
+  db.User.authenticate(userName, password, function (err, user) {
+    if (err) {return console.log(err);}
     // login the user
     req.login(user);
+    console.log(req.session);
     // redirect to user profile
     res.redirect("/profile"); 
   });
@@ -116,5 +126,5 @@ app.delete(["/sessions", "/logout"], function(req, res) {
 });
 
 var listener = app.listen(3000, function () {
-  console.log("ALL Systems Onlie on port " + listener.address().port);
+  console.log("ALL systems online on port " + listener.address().port);
 });
