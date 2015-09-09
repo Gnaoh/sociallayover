@@ -6,6 +6,7 @@ body {
     color: #888;
     line-height: 30px;
     text-align: center;
+    background-color: #3A3A3A;
 }
 
 strong { font-weight: 500; }
@@ -16,12 +17,20 @@ a, a:hover, a:focus {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
-h1, h2 {
+h1  {
 	margin-top: 10px;
 	font-size: 45px;
-    font-weight: 100;
-    color: #555;
-    line-height: 50px;
+  font-weight: bold;
+  color: #555;
+  line-height: 50px;
+  }
+
+h2 {
+  font-size: 40px;
+  line-height: 10px;
+  font-weight: 100;
+}
+
 }
 
 h3 {
@@ -76,7 +85,7 @@ img {
 
 .top-content .text h1 {
 	margin-top: 30px;
-	color: #2C3331;
+	color: white;
 }
 
 .top-content .description {

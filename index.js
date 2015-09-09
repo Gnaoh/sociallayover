@@ -78,13 +78,13 @@ app.post(["/users", "/signup"], function signup(req, res) {
   // grab the user from the params
   var user = req.body.user;
   // pull out their information
-  var firstName = user.firstName;
-  var lastName = user.lastName;
+  var name = user.name;
+  var email = user.email;
   var userName = user.userName;
   var password = user.password;
   var about = user.about;
   // create the new user
-  db.User.createSecure(firstName, lastName, userName, password, about, function(err, user) {
+  db.User.createSecure(name, email, userName, password, about, function(err, user) {
     if (err) {return console.log(err);}
     req.login(user);
     res.redirect("/profile"); 
@@ -96,15 +96,18 @@ app.post(["/sessions", "/login"], function login(req, res) {
   var user = req.body.user;
   var userName = user.userName;
   var password = user.password;
-  console.log(userName);
+  // console.log(userName);
+  // console.log(user);
 
   db.User.authenticate(userName, password, function (err, user) {
-    if (err) {return console.log(err);}
+    if (err) {return res.redirect('/login')}
     // login the user
+    if(user === null){
+    res.redirect('/login')
+    } else {
     req.login(user);
-    console.log(req.session);
     // redirect to user profile
-    res.redirect("/profile"); 
+    res.redirect("/profile");}
   });
 });
 
@@ -122,7 +125,7 @@ app.get("/profile", function userShow(req, res) {
 // logout the user
 app.delete(["/sessions", "/logout"], function(req, res) {
   req.logout();
-  res.redirect("/login");
+  res.redirect("/");
 });
 
 var listener = app.listen(3000, function () {

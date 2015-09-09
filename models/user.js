@@ -11,8 +11,8 @@ var mongoose = require('mongoose'),
 
 // create user schema
 var UserSchema = new Schema({
-  firstName: {type: String},
-  lastName: {type: String},
+  name: {type: String, required: true},
+  email: {type: String, required: true},
   userName: {type: String, required: true},
   password: {type: String, required: true},
   about: {type: String},
@@ -20,7 +20,7 @@ var UserSchema = new Schema({
 });
 
 // create a new user with secure (hashed) password (for sign up)
-UserSchema.statics.createSecure = function (firstName, lastName, userName, password, about, cb) {
+UserSchema.statics.createSecure = function (name, email, userName, password, about, cb) {
   // `_this` now references our schema
   var _this = this;
   // generate some salt 
@@ -29,8 +29,8 @@ bcrypt.genSalt(function (err, salt) {
   bcrypt.hash(password, salt, function (err, hash) {
     // build the user object
     var user = {
-      firstName: firstName,
-      lastName:  lastName,
+      name: name,
+      email:  email,
       userName: userName,
       password: hash,
       about: about,

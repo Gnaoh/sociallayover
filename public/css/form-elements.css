@@ -24,6 +24,7 @@ textarea.form-control {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	line-height: 30px;
+    max-width: 549px;
 }
 
 input[type="text"]:focus, 

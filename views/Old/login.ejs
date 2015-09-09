@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+<body>
+        <div class="top-content">
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                          <a class="logo" href="index.html"></a>
+                            <h1><strong>Social Layover</strong> <br>Networking in the Cloud</h1>
+                              <div class="top-big-link">
+                                <a class="btn btn-link-1" id="launch-modal-login" href="#" data-modals-id="modal-login">LOGIN</a>
+                              </div>
+                        </div>                            
+                    </div>
+                </div>
+            </div>
+        </div>
+<!========================================
+              Login Modals
+========================================-->
+        <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  <span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+                </button>
+                <h3 class="modal-title" id="modal-login-label">Member Login</h3>
+                <p>Sign in to get connected:</p>
+              </div>
+              <div class="modal-body">
+                <form action="/users" method="POST" class="registration-form">
+                    <div class="form-group">
+                      <label class="sr-only">Username</label>
+                      <input type="text" name="user[userName]" placeholder="Username" class="form-username form-control" id="form-username">
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only">Password</label>
+                      <input type="password" name="user[password]" placeholder="Password" class="form-password form-control" id="form-password">
+                    </div>                          
+
+                    <button class="btn">Connect</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
