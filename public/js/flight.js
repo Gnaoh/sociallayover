@@ -23,7 +23,6 @@ $(document).ready(function() {
                 flightstats.flight_number = data.flightStatuses[i].flightNumber;
                 // flightstats.departure_code = data.flightStatuses[i].departureAirportFsCode;
                 // flightstats.arrivals_code = data.flightStatuses[i].arrivalAirportFsCode;
-                flightstats.status = data.flightStatuses[i].status;
                 flightstats.flightId = data.flightStatuses[i].flightId;
                 flightstats.carrier = data.appendix.airlines[i].name;
                 flightstats.departure_date = data.flightStatuses[i].departureDate.dateUtc;
@@ -32,15 +31,44 @@ $(document).ready(function() {
                 flightstats.arrival_date = data.flightStatuses[i].arrivalDate.dateUtc;
                   arrival = new Date(flightstats.arrival_date).toLocaleTimeString();
                     newArrival = arrival.replace(/:\d\d /, ' ');
-              }
-              $(".flightstats").append(
-                "<tr><td>" + flightstats.airline_code + " " + flightstats.flight_number +"</td>" +
-                "<td>" + flightstats.carrier +"</td>" +
-                "<td>" + newDeparture +"</td>" + 
-                "<td>" + newArrival +"</td>" + 
-                "<td>" + flightstats.status +"</td></tr>"
-                );
+                flightstats.status = data.flightStatuses[i].status;
 
+                if (data.flightStatuses[i].hasOwnProperty('delays')) {
+                  $('#flight_modal').append("<div>DELAYED</div>");
+                  $('#delayed_status').modal('show');
+                } else {
+                  $('#other_status').append("<div>ONTIME</div>");      
+                };
+              }
+                if (flightstats.status === "S") {
+                  flightstats.status = "Scheduled";
+                }else if (flightstats.status === "A") {
+                  flightstats.status = "Active"; 
+                }else if (flightstats.status === "C") {
+                  flightstats.status = "Canceled";                      
+                }else if (flightstats.status === "D") {
+                  flightstats.status = "Diverted"; 
+                }else if (flightstats.status === "DN") {
+                  flightstats.status = "Data source needed";
+                }else if (flightstats.status === "NO") {
+                  flightstats.status = "Not Operational";
+                }else if (flightstats.status === "R") {
+                  flightstats.status = "Redirected";
+                }else if (flightstats.status === "L") {
+                  flightstats.status = "Landed";
+                }else if (flightstats.status === "U") {
+                  flightstats.status = "Unknown";                    
+                }else {
+                  flightstats.status = "PLEASE CHECK FLIGHT INPUT";
+                }
+
+                $(".flightstats").append(
+                  "<tr><td>" + flightstats.airline_code + " " + flightstats.flight_number +"</td>" +
+                  "<td>" + flightstats.carrier +"</td>" +
+                  "<td>" + newDeparture +"</td>" + 
+                  "<td>" + newArrival +"</td>" + 
+                  "<td>" + flightstats.status +"</td></tr>"
+                  );
             },
             error: function (error_message) {
                 console.log(error_message);
