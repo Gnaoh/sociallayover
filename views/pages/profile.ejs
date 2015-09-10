@@ -1,9 +1,74 @@
-<h1>Profile</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+<body>
+<!========================================
+              NAVIGATION
+========================================-->  
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Social Layover</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="profile">Profile</a></li>
+          <li><a href="#lounge">Lounge</a></li>
+          <li><a href="#logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!========================================
+              Profile
+========================================--> 
+<div class="container">
 
-Hello <%= user.name %>!
-
-<!-- have the server treat this as a delete request using query params & method-override (html forms can only technically submit get & post requests, so we have to simulate a delete) -->
-<form method="post" action="/logout?_method=DELETE">
-	<button type="submit">Logout</button>
-</form>
-
+</div>
+<!========================================
+              Flight Tracker
+========================================-->  
+  <div class="headline">
+    <div class="container">    
+      <h3>FLIGHT TRACKER</h3>
+        <form role="form" class="form-horizontal">
+          <div class="form-group">
+            <input id='airline' type="text" name="airline" placeholder="Airline name or code" class="input-lg form-control2" size="63%">
+          </div>
+          <div class="form-group">
+            <input id='flight_num' type="text" name="flight" placeholder="Flight Number" class="input-lg form-control2" size="63%">
+          </div>
+          <div class="form-group">
+            <input class="searchbtn" id="give_me" type="button" value="Search" size="50">
+          </div>
+        </form>
+        <div id = 'display' align="center" ></div>
+    </div>
+    <div id='flightModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p  align="center">___STATUS____</p>
+            <p id="minutes" align="center"></p>
+            <p align="center"> Let's not waste time and do something fun!<br>What would you like to do now?</p>
+            <form method="POST" role="form">
+            <input type="submit" value="Enter Lounge" class="input-lg form-control btn-teal" >
+          </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+  <footer>
+    <% include ../partials/footer %>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+  </footer>
+</body>
+</html>
+<!--<form class="li" method="post" action="/logout?_method=DELETE">
+<button type="submit">Logout</button>
+ </form>-->

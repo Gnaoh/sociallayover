@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% include ../partials/head %>w
+    <% include ../partials/head %>
   </head>
 <body> 
 
@@ -41,23 +41,18 @@
               <div class="modal-body">   
                 <form action="/signup" method="POST" class="registration-form">
                   <div class="form-group">
-                    <label class="sr-only">Name</label>
                       <input type="text" name="user[name]" placeholder="Name" class="form-first-name form-control" id="form-name">
                     </div>
                     <div class="form-group">
-                      <label class="sr-only">Email</label>
                       <input type="text" name="user[email]" placeholder="Email" class="form-last-name form-control" id="form-last-email">
                     </div>
                     <div class="form-group">
-                      <label class="sr-only">Username</label>
                       <input type="text" name="user[userName]" placeholder="Username" class="form-username form-control" id="form-username">
                     </div>
                     <div class="form-group">
-                      <label class="sr-only">Password</label>
                       <input type="password" name="user[password]" placeholder="Password" class="form-password form-control" id="form-password">
                     </div>                          
                     <div class="form-group">
-                      <label class="sr-only">About yourself</label>
                       <textarea name="user[about]" placeholder="About yourself..." class="form-about-yourself form-control" id="form-about-yourself" ></textarea>
                     </div>
                     <button class="btn">Register</button>
@@ -82,11 +77,9 @@
               <div class="modal-body">
                 <form action="/login" method="POST" class="registration-form">
                     <div class="form-group">
-                      <label class="sr-only">Username</label>
                       <input type="text" name="user[userName]" placeholder="Username" class="form-username form-control" id="form-username">
                     </div>
                     <div class="form-group">
-                      <label class="sr-only">Password</label>
                       <input type="password" name="user[password]" placeholder="Password" class="form-password form-control" id="form-password">
                     </div>                          
 

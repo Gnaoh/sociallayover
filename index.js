@@ -100,7 +100,7 @@ app.post(["/sessions", "/login"], function login(req, res) {
   // console.log(user);
 
   db.User.authenticate(userName, password, function (err, user) {
-    if (err) {return res.redirect('/login')}
+    if (err) {return res.redirect('/signup')}
     // login the user
     if(user === null){
     res.redirect('/login')
