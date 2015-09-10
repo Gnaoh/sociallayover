@@ -53,7 +53,7 @@
             <p  align="center">___STATUS____</p>
             <p id="minutes" align="center"></p>
             <p align="center"> Let's not waste time and do something fun!<br>What would you like to do now?</p>
-            <form method="POST" role="form">
+            <form action="/lounge">
             <input type="submit" value="Enter Lounge" class="input-lg form-control btn-teal" >
           </div>
             </form>
@@ -61,6 +61,21 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container hideshow">
+    <hr class="featurette-divider">
+      <table class="table table-bordered thead" style="display:none">
+        <thead>
+          <tr align="center">
+            <th width="90px" align="center">Flight</th>
+            <th width="130px">Carrier</th>
+            <th width="70px">Departure</th>
+            <th width="70px">Arrival</th>
+            <th width="90px">Status</th>
+          </tr>
+        </thead>
+        <tbody class="flightstats"></tbody>
+      </table>
   </div>
 </body>
   <footer>

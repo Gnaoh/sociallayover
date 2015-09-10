@@ -7,6 +7,20 @@
 body {
     margin-top: 50px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
+
+.table>caption+thead>tr:first-child>td, .table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>td, .table>thead:first-child>tr:first-child>th {
+    border-top: 0;
+    text-align: center;
+}
+
+.container2 {
+    width: 500px;
+}
+
+thead {
+    text-align: center;
+    background-color: #333333;
+}
 .navbar-inverse {
     background-color: #333333;
     border-color: #333333;
@@ -40,6 +54,7 @@ body {
 
 .headline {
     padding: 120px 0;
+    padding-bottom: 0px;
 }
 
 .headline h1 {
