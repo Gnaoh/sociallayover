@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+  </head>
+<body>
+<!========================================
+              NAVIGATION
+========================================-->     
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Social Layover</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="profile">Profile</a></li>
+          <li><a href="lounge">Lounge</a></li>
+          <li><a href="/">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<!========================================
+              ACTIVE USERS
+========================================-->      
+  <div class="container">
+    <hr class="featurette-divider">
+    <div class="container">
+      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/group.png" name="aboutme"></a>
+<!--       <h4>Peter Hoang<br><small>San Francisco International Airport</small></h4>
+ -->      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title" id="myModalLabel">More About Peter</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+                <img src="static/img/profile.jpg" width="140" height="140" border="0" class="img-circle"></a>
+                <h3 class="media-heading">Peter Hoang <br><small>28, San Francisco, CA</small></h3>
+              </center>
+            <hr>
+              <center>
+                <p class="text-left"><strong>Bio: </strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                <br>
+              </center>
+            </div>
+            <div class="modal-footer">
+              <center>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Request to connect!</button>
+              </center>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <hr class="featurette-divider">
+  </div>
+</body>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

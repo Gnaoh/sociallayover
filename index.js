@@ -58,8 +58,8 @@ app.use(function (req, res, next) {
               ROUTES
 ========================================*/
 
-app.get("/main", function(req, res) {
-res.render("pages/main")
+app.get("/lounge", function(req, res) {
+res.render("pages/lounge")
 });
 
 // login route
