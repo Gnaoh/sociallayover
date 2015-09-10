@@ -41,24 +41,105 @@
     <header class="header-image">
         <div class="headline">
             <div class="container">
-                <h1>FLIGHTSTAT MAP INTEGRATION</h1>
-                <h2>FLIGHTSTAT SEARCH INTEGRATION</h2>
+
+                <div id="map"></div>
+
+                <h3>FLIGHTSTAT SEARCH INTEGRATION</h3>
+
+
+        <div id = 'display' align="center" >
+        </div>
+
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <p style="color: white" class="label-control">Airline: ( <u>IATA code only</u>) </p>
+                <input id='airline' type="text" name="airline" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white">Flight #: </p>
+                <input id='flight_num' type="text" name="flight#" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Year:</p>
+                <input id='year' type="text" name="year" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Month:</p>
+                <input id='month' type="text" name="month" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                <p style="color: white" class="label-control">Day:</p>
+                <input id='day' type="text" name="day" class="input-lg form-control">
+            </div>
+            <div class="form-group">
+                 <input class="input-lg form-control btn-teal" id="give_me" type="button" value="Search">
+            </div>
+        </form>
+   </div>
+
+    <div id='flightModal' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p  align="center">We're sorry your flight is delayed...</p>
+                    <p id="minutes" align="center"></p>
+                    <p align="center"> Let's not waste time and do something fun!<br>
+                    What would you like to do now?
+                    </p>
+                    <!--<div class="selection">-->
+
+                    <form method="POST" role="form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ form }}
+                            <br>
+                            <input type="submit" class="input-lg form-control btn-teal" >
+                        </div>
+                    </form>
+                 <!--</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div id='flightModal1' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div id='modal1' class="modal-content">
+            <p align="center">Awesome! Your flight is currently on time and you're good to go!
+            <br>
+                Have a safe flight!
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+        $("select#id_category").addClass("input-lg form-control");
+    </script>
+
+
+
+
+
+
+
+
+
+
+
             </div>
         </div>
     </header>
 
     <!-- Page Content -->
     <div class="container">
-        <hr class="featurette-divider">
-<h2> ACTIVE USERS<h2><br> 
 
+        <hr class="featurette-divider">
 <div class="container">
-    <div class=>
-    <center>
-        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/default.jpg" name="aboutme" width="100" height="100" class="img-circle"></a>
-        <h4>Peter Hoang<br><small>Los Angeles International Airport</small></h4>
-    </center>
-    </div>
+        <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/profile.jpg" name="aboutme" width="100" height="100" class="img-circle"></a>
+        <h4>Peter Hoang<br><small> Los Angeles International Airport </small></h4>
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -70,8 +151,7 @@
                 <div class="modal-body">
                     <center>
                     <img src="static/img/profile.jpg" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">Peter Hoang <br><small>Vietnam</small></h3>
-
+                    <h3 class="media-heading">Peter Hoang <br><small>28, San Francisco, CA</small></h3>
                     </center>
                     <hr>
                     <center>
@@ -83,52 +163,17 @@
                 <div class="modal-footer">
                     <center>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Request to connect!</button>
+                    </center>
                 </div>
             </div>
         </div>
     </div>
+    
 </div>
 
-<a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/default.jpg" name="aboutme" width="100" height="100" class="img-circle"></a>
-        <h4>Peter Hoang<br><small>Los Angeles International Airport</small></h4>
-    </center>
-    </div>
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                    <h4 class="modal-title" id="myModalLabel">More About Peter</h4>
-                    </div>
-                <div class="modal-body">
-                    <center>
-                    <img src="static/img/profile.jpg" width="140" height="140" border="0" class="img-circle"></a>
-                    <h3 class="media-heading">Peter Hoang <br><small>Vietnam</small></h3>
 
-                    </center>
-                    <hr>
-                    <center>
-                    <p class="text-left"><strong>Bio: </strong><br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
-                    <br>
-                    </center>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Request to connect!</button>
-                </div>
-            </div>
-        </div>
-    </div>
+<hr class="featurette-divider">
 </div>
-</center>
-
-
-
-
-        <hr class="featurette-divider">
-
 </body>
   <footer>
     <% include ../partials/footer %>
