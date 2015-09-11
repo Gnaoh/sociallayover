@@ -9,11 +9,9 @@ $(document).ready(function() {
       var year = new Date().getFullYear();
       var month = new Date().getMonth() + 1;
       var day = new Date().getDate();
-
 /*========================================
           API INTEGRATION
 ========================================*/
-
       $.ajax({
         url: 'https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/flight/status/' + airline + '/' + flight_num + '/dep/' + year + '/' + month + '/' + day + '?appId=' +appID + '&appKey=' + appKey,
         type: 'GET',
