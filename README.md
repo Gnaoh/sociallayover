@@ -1,14 +1,14 @@
-## Synopsis
+# Synopsis
 
 Greetings travelers, I come to you from a distant star. Imagine a world of infinite possibilities, one of which I will present to you today. 
 
-For my first project at General Assembly WDI, I made a web application that allows individuals who has a layover or is experiencing a delay to connect with one another at the airport. 
+For my first project at General Assembly WDI, I made a web application that allows individuals who are experiencing a layover or is hit with a delay to connect with one another at the airport. 
 
-## Technologies
+# Technologies
 
 This app uses the following tech:
 
-#Back-end
+## Back-end
     "bcryptjs": "^2.2.1",
     "body-parser": "^1.13.3",
     "bower": "^1.5.2",
@@ -21,20 +21,20 @@ This app uses the following tech:
     "multer": "^1.0.3",
     "nodemon": "^1.4.1"
 
-#Front-end
+## Front-end
     "bootstrap": "~3.3.5",
     "jquery": "~2.1.4",
     "underscore": "~1.8.3"
 
-## Motivation
+# Motivation
 
-My previous jobs allowed me the opportunity to experience life on the cloud;. I traveled quite often throughout the country and although it can be exciting to be somewhere new; often times it’s also tiring and lonely. The latter experience is the result of this app, to connect those who travel often, especially when they are hit with unexpected delays or have a layover.
+My previous jobs allowed me the opportunity to experience life on the cloud. I traveled quite often throughout the country and although it can be exciting; often times it’s also tiring and lonely. The latter experience is the result of this app; to connect travelers with one another, who are experiencing a delays or have a layover.
 
-## API Reference
+# API Reference
 
 The JSON data that I pulled for this web application is from FlightStats (www.flightstats.com). 
 
-##Upcoming Features
+# Upcoming Features
 
 Chat Application
 Route/Map Integration
