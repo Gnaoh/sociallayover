@@ -24,15 +24,31 @@
 <!========================================
               Profile
 ========================================--> 
-<div class="container">
-xxx
-</div>
+  <div class="container">
+    <div class="profile card">
+      <div class="profile-body">
+          <div class="profile-bio">
+            <div class="row">
+              <div class="col-md-5 text-center">
+                <img class="img-thumbnail md-margin-bottom-10" src="static/img/profile.png" alt="">
+              </div>
+              <div class="col-md-7">
+                  <h2><strong><%= user.name %></strong></h2>
+                  <span><strong>Profession: </strong><%= user.job %></span>
+                  <hr>
+                  <p><%= user.about %></p>
+              </div>
+            </div>  
+          </div>
+      </div>
+    </div>
+  </div>   
 <!========================================
               Flight Tracker
 ========================================-->  
   <div class="headline">
     <div class="container">    
-      <h3>FLIGHT TRACKER</h3>
+      <h3 class="flighttracker">FLIGHT TRACKER</h3>
         <form role="form" class="form-horizontal">
           <div class="form-group">
             <input id='airline' type="text" name="airline" placeholder="Airline name or code" class="input-lg form-control2" size="63%">
@@ -60,6 +76,9 @@ xxx
         <tbody class="flightstats"></tbody>
       </table>
   </div>
+<!========================================
+              FLIGHT STATUS MODALS
+========================================--> 
   <div id='delayed_modal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div id='delayed_status' class="modal-content"></div>
@@ -68,7 +87,6 @@ xxx
         </form>
     </div>
   </div>
-
   <div id='other_modal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div id='other_status' class="modal-content"></div>

@@ -11,6 +11,9 @@ var express = require('express'),
     methodOverride = require('method-override'),
     app = express();
 
+/*========================================
+          MIDDLEWARE
+========================================*/
 // use ejs
 app.set('view engine', 'ejs');
 // use method over-ride
@@ -53,13 +56,18 @@ app.use(function (req, res, next) {
   // call the next middleware in the stack
   next(); 
 });
-
 /*========================================
               ROUTES
 ========================================*/
-
-app.get("/lounge", function(req, res) {
-res.render("pages/lounge")
+app.get("/lounge", function userShow(req, res) {
+  req.currentUser(function (err, currentUser) {
+    if (currentUser === null) {
+      res.redirect("/signup")
+    } else {
+      res.render("pages/lounge", {user: currentUser});
+      console.log(currentUser);
+    }
+  })
 });
 
 // login route
@@ -79,12 +87,13 @@ app.post(["/users", "/signup"], function signup(req, res) {
   var user = req.body.user;
   // pull out their information
   var name = user.name;
+  var job = user.job;
   var email = user.email;
   var userName = user.userName;
   var password = user.password;
   var about = user.about;
   // create the new user
-  db.User.createSecure(name, email, userName, password, about, function(err, user) {
+  db.User.createSecure(name, job, email, userName, password, about, function(err, user) {
     if (err) {return console.log(err);}
     req.login(user);
     res.redirect("/profile"); 

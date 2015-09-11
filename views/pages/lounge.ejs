@@ -24,28 +24,30 @@
   </nav>
 <!========================================
               ACTIVE USERS
-========================================-->      
+========================================--> 
   <div class="container">
     <hr class="featurette-divider">
     <div class="container">
-      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/group.png" name="aboutme"></a>
-<!--       <h4>Peter Hoang<br><small>San Francisco International Airport</small></h4>
- -->      <!-- Modal -->
+      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/profile.png" width="140" height="140" border="0" class="img-circle" name="aboutme"></a>
+      <h4><%=user.name%><br><small class="airline">San Francisco International Airport</small></h4>
+<!========================================
+              ACTIVE USERS MODAL
+========================================--> 
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title" id="myModalLabel">More About Peter</h4>
+                <h4 class="modal-title" id="myModalLabel">Profile</h4>
             </div>
             <div class="modal-body">
               <center>
-                <img src="static/img/profile.jpg" width="140" height="140" border="0" class="img-circle"></a>
-                <h3 class="media-heading">Peter Hoang <br><small>28, San Francisco, CA</small></h3>
+                <img src="static/img/profile.png" width="140" height="140" border="0" class="img-circle">
+                <h3 class="media-heading"><%=user.name%><br><small>28, <%=user.job%></small></h3>
               </center>
             <hr>
               <center>
-                <p class="text-left"><strong>Bio: </strong><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sem dui, tempor sit amet commodo a, vulputate vel tellus.</p>
+                <p class="text-left"><strong>Bio: </strong><br><%=user.about%></p>
                 <br>
               </center>
             </div>
@@ -60,7 +62,6 @@
     </div>
     <hr class="featurette-divider">
   </div>
-</body>
   <footer>
     <% include ../partials/footer %>
   </footer>

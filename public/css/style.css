@@ -1,20 +1,22 @@
-
+/*========================================
+          STYLE CSS 
+========================================*/
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #FFF;
-    line-height: 30px;
-    text-align: center;
-    background-color: #3A3A3A;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #CCCACA;
+  line-height: 30px;
+  text-align: center;
+  background-color: #3A3A3A;
 }
 
 strong { font-weight: 500; }
 
 a, a:hover, a:focus {
-	color: #fd625e;
-	text-decoration: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+  color: #fd625e;
+  text-decoration: none;
+  -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 h1.titleheader {
   font-size: 70px;
@@ -37,54 +39,57 @@ h2 {
 }
 
 h3 {
-	font-size: 22px;
-    font-weight: 300;
-    color: #555;
-    line-height: 30px;
+  font-size: 22px;
+  font-weight: 300;
+  color: #555;
+  line-height: 30px;
 }
 
+h3.flighttracker {
+  font-size: 35px;
+}
 img { 
   max-width: 100%;
  }
 
-::-moz-selection { background: #fd625e; color: #fff; text-shadow: none; }
-::selection { background: #fd625e; color: #fff; text-shadow: none; }
-
+::-moz-selection { 
+  background: #fff; 
+  color: #fff; 
+  text-shadow: none; 
+}
+::selection { 
+  background: #fff; 
+  color: #fff; 
+  text-shadow: none; 
+}
+/*========================================
+          FLIGHT STATUS 
+========================================*/
 .delayed {
   font-family: Grid;
   font-size: 100px;
   text-align: center;
-  line-height: 316px;
+  line-height: 125px;
   color: #DA2424;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 100px;
 }
 
 .ontime {
   font-family: Grid;
   font-size: 100px;
   text-align: center;
-  line-height: 316px;
+  line-height: 125px;
   color: #04F51A;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-top: 100px;
+
 }
-
-.btn-link-1 {
-	display: inline-block;
-	height: 50px;
-	margin: 0 5px;
-	padding: 16px 20px 0 20px;
-	background: #2C3331;
-	font-size: 16px;
-    font-weight: 300;
-    line-height: 16px;
-    color: #fff;
-    -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
-    opacity: 0.7;
-}
-
-.btn-link-1:hover, .btn-link-1:focus, .btn-link-1:active { outline: 0; opacity: 1.0; color: #fff; }
-
-
-/***** Content *****/
-
+/*========================================
+          SPLASH SCREEN
+========================================*/
 .inner-bg {
     padding: 120px 0;
 }
@@ -120,10 +125,9 @@ img {
 .top-content .top-big-link {
 	margin-top: 45px;
 }
-
-
-/***** Modal *****/
-
+/*========================================
+          MODALS 
+========================================*/
 .modal-content {
 	background: #3a3a3a;
 	-moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;
@@ -175,10 +179,9 @@ img {
 .modal-body form .input-error {
 	border-color: #fd625e;
 }
-
-
-/***** Media queries *****/
-
+/*========================================
+          MEDIA
+========================================*/
 @media (min-width: 992px) and (max-width: 1199px) {}
 
 @media (min-width: 768px) and (max-width: 991px) {}
@@ -195,10 +198,9 @@ img {
 	h1, h2 { font-size: 32px; }
 
 }
-
-
-/* Retina-ize images/icons */
-
+/*========================================
+          Retina-ize images/icons
+========================================*/
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (   min--moz-device-pixel-ratio: 2),
