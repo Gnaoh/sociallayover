@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #888;
+    color: #FFF;
     line-height: 30px;
     text-align: center;
     background-color: #3A3A3A;
@@ -16,6 +16,9 @@ a, a:hover, a:focus {
 	text-decoration: none;
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
+h1.titleheader {
+  font-size: 70px;
+}
 
 h1  {
 	margin-top: 10px;
@@ -26,7 +29,7 @@ h1  {
   }
 
 h2 {
-  font-size: 40px;
+  font-size: 37px;
   line-height: 10px;
   font-weight: 100;
 }
@@ -46,6 +49,22 @@ img {
 
 ::-moz-selection { background: #fd625e; color: #fff; text-shadow: none; }
 ::selection { background: #fd625e; color: #fff; text-shadow: none; }
+
+.delayed {
+  font-family: Grid;
+  font-size: 100px;
+  text-align: center;
+  line-height: 316px;
+  color: #DA2424;
+}
+
+.ontime {
+  font-family: Grid;
+  font-size: 100px;
+  text-align: center;
+  line-height: 316px;
+  color: #04F51A;
+}
 
 .btn-link-1 {
 	display: inline-block;
@@ -79,7 +98,6 @@ img {
 	width: 181px;
 	height: 43px;
 	margin: 0 auto;
-	background: url(../img/logo.png) center center no-repeat;
 }
 
 .top-content .text h1 {
@@ -189,9 +207,5 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
 	
-	/* logo */
-    .top-content .logo {
-    	background-image: url(../../public/img/logo@2x.png) !important; background-repeat: no-repeat !important; background-size: 181px 43px !important;
-    }
 	
 }

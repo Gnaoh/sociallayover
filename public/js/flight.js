@@ -2,7 +2,6 @@ $(document).ready(function() {
     var appKey = '3e36be5bc315845b2d546c195a3141a4';
     var appID = '41f1c3c0';
     var flightstats = {};
-    var flightappendix = {}
 
     $('#give_me').click(function () {
         var airline = $('#airline').val();
@@ -32,18 +31,12 @@ $(document).ready(function() {
                   arrival = new Date(flightstats.arrival_date).toLocaleTimeString();
                     newArrival = arrival.replace(/:\d\d /, ' ');
                 flightstats.status = data.flightStatuses[i].status;
+              };
 
-                if (data.flightStatuses[i].hasOwnProperty('delays')) {
-                  $('#flight_modal').append("<div>DELAYED</div>");
-                  $('#delayed_status').modal('show');
-                } else {
-                  $('#other_status').append("<div>ONTIME</div>");      
-                };
-              }
                 if (flightstats.status === "S") {
                   flightstats.status = "Scheduled";
                 }else if (flightstats.status === "A") {
-                  flightstats.status = "Active"; 
+                  flightstats.status = "En Route"; 
                 }else if (flightstats.status === "C") {
                   flightstats.status = "Canceled";                      
                 }else if (flightstats.status === "D") {
@@ -62,18 +55,25 @@ $(document).ready(function() {
                   flightstats.status = "PLEASE CHECK FLIGHT INPUT";
                 }
 
+               if (!(flightstats.status === "Schedule") && (flightstats.status === "En Route") && (flightstats.status === "Landed")) {
+                $('#delayed_status').html("");
+                $('#delayed_status').append("<h1 class='delayed'>" + flightstats.status + "</h1>");
+                $('#delayed_modal').modal('show');
+                } else {
+                $('#other_status').html("");
+                $('#other_status').append("<h1 class='ontime'>" + flightstats.status + "</h1>");   
+                $('#other_modal').modal('show');  
+                }
+
                 $(".flightstats").append(
-                  "<tr><td>" + flightstats.airline_code + " " + flightstats.flight_number +"</td>" +
-                  "<td>" + flightstats.carrier +"</td>" +
-                  "<td>" + newDeparture +"</td>" + 
-                  "<td>" + newArrival +"</td>" + 
-                  "<td>" + flightstats.status +"</td></tr>"
-                  );
+                "<tr><td>" + flightstats.airline_code + " " + flightstats.flight_number +"</td>" +
+                "<td>" + flightstats.carrier +"</td>" +
+                "<td>" + newDeparture +"</td>" + 
+                "<td>" + newArrival +"</td>") 
             },
             error: function (error_message) {
                 console.log(error_message);
              }
         })
-
     });
 });

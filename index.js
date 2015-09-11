@@ -118,6 +118,7 @@ app.get("/profile", function userShow(req, res) {
       res.redirect("/signup")
     } else {
       res.render("pages/profile", {user: currentUser});
+      console.log(currentUser);
     }
   })
 });

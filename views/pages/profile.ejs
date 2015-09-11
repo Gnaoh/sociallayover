@@ -25,7 +25,7 @@
               Profile
 ========================================--> 
 <div class="container">
-
+xxx
 </div>
 <!========================================
               Flight Tracker
@@ -46,7 +46,6 @@
         </form>
     </div>
   </div>
-<div id = 'flight_modal' align="center" ></div>
   <div class="container hideshow">
     <hr class="featurette-divider">
       <table class="table table-bordered thead" style="display:none">
@@ -56,63 +55,25 @@
             <th width="130px">Carrier</th>
             <th width="70px">Departure</th>
             <th width="70px">Arrival</th>
-            <th width="90px">Status</th>
           </tr>
         </thead>
         <tbody class="flightstats"></tbody>
       </table>
   </div>
-
-    <div id='delayed_status' class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <p  align="center">___STATUS____</p>
-            <p id="minutes" align="center"></p>
-            <p align="center"> Let's not waste time and do something fun!<br>What would you like to do now?</p>
-            <form action="/lounge">
-            <input type="submit" value="Enter Lounge" class="input-lg form-control btn-teal" >
-          </div>
-            </form>
-          </div>
-        </div>
-      </div>
+  <div id='delayed_modal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div id='delayed_status' class="modal-content"></div>
+        <form action="/lounge">
+          <input type="submit" value="Enter Lounge" class="searchbtn" >
+        </form>
     </div>
+  </div>
 
-
-
-    <div id='other_status' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div id='modal1' class="modal-content">
-            <p align="center">Awesome! Your flight is currently on time and you're good to go!
-            <br>
-                Have a safe flight!
-            </p>
-        </div>
-      </div>
+  <div id='other_modal' class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div id='other_status' class="modal-content"></div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </div>
 </body>
   <footer>
     <% include ../partials/footer %>
