@@ -7,7 +7,7 @@ var mongoose = require('mongoose'),
 ========================================*/
 var UserSchema = new Schema({
   name: {type: String, required: true},
-  job: {type: String, required:true},
+  job: {type: String},
   email: {type: String, required: true},
   userName: {type: String, required: true},
   password: {type: String, required: true},
