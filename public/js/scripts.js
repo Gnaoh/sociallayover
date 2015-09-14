@@ -18,6 +18,12 @@ jQuery(document).ready(function() {
   $( ".searchbtn" ).one("click", function() {
     $( ".thead" ).fadeToggle( "slow", "linear" )
   });
+
+//Edit Modals   
+  $('#launch-modal-edit').on('click', function(e){
+    e.preventDefault();
+      $( '#' + $(this).data('modals-id') ).modal();
+  });
 /*==============================================
       VALIDATION FORMS (PINK OUTLINE)
 ==============================================*/
