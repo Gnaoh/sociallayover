@@ -8,7 +8,11 @@ var mongoose = require('mongoose'),
 var UserSchema = new Schema({
   name: {type: String, required: true},
   job: {type: String},
+  age: {type: Number},
   email: {type: String, required: true},
+  facebook: {type: String},
+  twitter: {type: String},
+  instagram: {type: String},
   userName: {type: String, required: true},
   password: {type: String, required: true},
   about: {type: String},
@@ -18,7 +22,7 @@ var UserSchema = new Schema({
               CREATE OAUTH
 ========================================*/
 // create a new user with secure (hashed) password (for sign up)
-UserSchema.statics.createSecure = function (name, job, email, userName, password, about, cb) {
+UserSchema.statics.createSecure = function (name, job, age, email, facebook, twitter, instagram, userName, password, about, cb) {
   // `_this` now references our schema
   var _this = this;
   // generate some salt 
@@ -29,7 +33,11 @@ bcrypt.genSalt(function (err, salt) {
     var user = {
       name: name,
       job: job,
+      age: age,
       email:  email,
+      facebook: facebook,
+      twitter: twitter,
+      instagram: instagram,
       userName: userName,
       password: hash,
       about: about,

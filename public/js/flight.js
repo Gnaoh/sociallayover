@@ -59,9 +59,9 @@ $(document).ready(function() {
 /*========================================
           FLIGHT MODAL APPEND
 ========================================*/
-            if (data.flightStatuses[i].hasOwnProperty('delays')) {
+            if (!(flightstats.status === "S") && (flightstats.status === "A") && (flightstats.status === "L")) {
               $('#delayed_status').html("");
-              $('#delayed_status').append("<h1 class='delayed'>" + flightstats.status + "</h1>");
+              $('#delayed_status').append("<h1 class='delayed'>" + flightstats.status + "</h1> ");
               $('#delayed_modal').modal('show');
               } else {
               $('#other_status').html("");

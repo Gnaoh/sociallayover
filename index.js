@@ -86,17 +86,39 @@ app.post(["/users", "/signup"], function signup(req, res) {
   var user = req.body.user;
   // pull out their information
   var name = user.name;
-  var job = user.job;
   var email = user.email;
   var userName = user.userName;
   var password = user.password;
   var about = user.about;
   // create the new user
-  db.User.createSecure(name, job, email, userName, password, about, function(err, user) {
+  db.User.createSecure(name, email, userName, password, about, function(err, user) {
     if (err) {return console.log(err);}
     req.login(user);
     res.redirect("/profile"); 
   });
+});
+
+// Update Profile
+app.post("/updateProfile", function(req, res){
+ 
+  req.currentUser(function(err, user){
+  var name = req.body.name;
+  var job = req.body.job;
+  var age = req.body.age;
+  var email = req.body.email;
+  var facebook = req.body.facebook;
+  var instagram = req.body.instagram;
+  var twitter = req.body.twitter;
+  var userName = req.body.userName;
+  var password = req.body.password;
+  var about = req.body.about;
+    
+ db.User.update({_id: user._id}, { $set: { email: email, password: password, name: name, job: job, age: age, facebook: facebook, instagram: instagram, twitter: twitter, userName: userName, about: about}}, function(err, user){
+  console.log("this is the new user", user)
+  })
+  res.redirect("/profile")
+
+  })
 });
 
 // where the user submits the login form
