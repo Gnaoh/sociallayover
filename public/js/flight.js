@@ -59,7 +59,7 @@ $(document).ready(function() {
 /*========================================
           FLIGHT MODAL APPEND
 ========================================*/
-            if (!(flightstats.status === "Schedule") && (flightstats.status === "En Route") && (flightstats.status === "Landed")) {
+            if (data.flightStatuses[i].hasOwnProperty('delays')) {
               $('#delayed_status').html("");
               $('#delayed_status').append("<h1 class='delayed'>" + flightstats.status + "</h1>");
               $('#delayed_modal').modal('show');

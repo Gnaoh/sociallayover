@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
     $( ".thead" ).fadeToggle( "slow", "linear" )
   });
 /*==============================================
-      VALIDATION FORMS (UNFILLED OUTLINE)
+      VALIDATION FORMS (PINK OUTLINE)
 ==============================================*/
   $('.registration-form input[type="text"], .registration-form textarea').on('focus', function() {
     $(this).removeClass('input-error');
