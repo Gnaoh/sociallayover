@@ -9,6 +9,7 @@ $(document).ready(function() {
       var year = new Date().getFullYear();
       var month = new Date().getMonth() + 1;
       var day = new Date().getDate();
+
 /*========================================
           API INTEGRATION
 ========================================*/
@@ -31,7 +32,7 @@ $(document).ready(function() {
                 arrival = new Date(flightstats.arrival_date).toLocaleTimeString();
                   newArrival = arrival.replace(/:\d\d /, ' ');
               flightstats.status = data.flightStatuses[i].status;
-            };
+
 /*========================================
           FLIGHT STATUS CONVERSION
 ========================================*/
@@ -52,22 +53,28 @@ $(document).ready(function() {
             }else if (flightstats.status === "L") {
               flightstats.status = "Landed";
             }else if (flightstats.status === "U") {
-              flightstats.status = "Unknown";                    
+              flightstats.status = "Unknown";                 
             }else {
               flightstats.status = "CHECK INPUT";
             }
-/*========================================
+
+            if (data.flightStatuses[i].delays.arrivalGateDelayMinutes === undefined) {
+              data.flightStatuses[i].delays.arrivalGateDelayMinutes = "0";
+            }
+
+ /*========================================
           FLIGHT MODAL APPEND
-========================================*/
-            if (!(flightstats.status === "S") && (flightstats.status === "A") && (flightstats.status === "L")) {
+========================================*/           
+              if (data.flightStatuses[i].hasOwnProperty('delays')) {
               $('#delayed_status').html("");
-              $('#delayed_status').append("<h1 class='delayed'>" + flightstats.status + "</h1> ");
+              $('#delayed_status').append("<div class='delayed'><p id='status'>Status:<p>" + "<p id='statuses'>" + flightstats.status + " - Delayed " + data.flightStatuses[i].delays.arrivalGateDelayMinutes + " minutes</p></div>");
               $('#delayed_modal').modal('show');
               } else {
               $('#other_status').html("");
-              $('#other_status').append("<h1 class='ontime'>" + flightstats.status + "</h1>");   
-              $('#other_modal').modal('show');  
+              $('#other_status').append("<div class='ontime'><p id='status'>Status:<p>" + "<p id='statuses'>" + flightstats.status + " - On-time</p></div>");
+              $('#delayed_modal').modal('show');
               }
+            };
 
             $('.flightstats').html("");
             $(".flightstats").append(
@@ -82,3 +89,20 @@ $(document).ready(function() {
       })
     });
 });
+
+
+
+// if (data.flightStatuses[i].hasOwnProperty('delays')) {
+//                         $('#delayed_status').append("<div><p>" + "Departure Airport: " + display_info.departure_airport + "<br>"
+//                             + "Arrival Airport: " + display_info.arrival_airport + "<br>" + "Delayed Minutes: "
+//                             + data.flightStatuses[i].delays.departureGateDelayMinutes + "</p></div>");
+//                         $('#minutes').append("Flight is delayed for: " + "<br>" + data.flightStatuses[i].delays.departureGateDelayMinutes
+//                             + " minutes" + "<br>");
+//                         $('#delayed_modal').modal('show');
+//                     }
+//                     else {
+//                         $('#other_status').append("<div><p>" + " Departure Airport: " + display_info.departure_airport + "<br>"
+//                             + " Arrival Airport: " + display_info.arrival_airport + "<br>" + " Current Flight Status: "
+//                             + display_info.status + "<br>" + "</p></div>");
+//                         $('#other_modal').modal('show');
+//                     }

@@ -1,3 +1,4 @@
+
 /*========================================
           STYLE CSS 
 ========================================*/
@@ -69,27 +70,63 @@ div#edit_btn {
           FLIGHT STATUS 
 ========================================*/
 .delayed {
-  font-family: Grid;
-  font-size: 100px;
   text-align: center;
-  line-height: 125px;
-  color: #DA2424;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-top: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 85px;
+  border-radius: 10px;
+  background: 255, 255, 255, 0;
+  background-color: #faa817;
+
 }
 
 .ontime {
-  font-family: Grid;
-  font-size: 100px;
   text-align: center;
-  line-height: 125px;
-  color: #04F51A;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-top: 100px;
-
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 85px;
+  border-radius: 10px;
+  background: 255, 255, 255, 0;
+  background-color: #62BC4E;
 }
+
+#other_modal {
+  border-radius: 50px;
+}
+
+#statuses {
+  font-size: 30px;
+  font-family: Tahoma, Arial, Verdana, sans-serif;
+  color: white;
+  font-weight: bold;
+}
+
+#status {
+  color: white;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.enterlounge {
+    max-width: 100%;
+    min-width: 25%;
+    margin: 10px;
+    background: #FFFFFF;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 50px;
+    color: #000;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+}
+}
+}
+
 /*========================================
           SPLASH SCREEN
 ========================================*/

@@ -38,15 +38,18 @@
               </div>
               <div class="col-md-7">
                   <h2><strong><%=user.name%></strong></h2>
-                  <span><%=user.age%>, <%=user.job%></span>
+                  <span><%=user.age%>, <%=user.job%></span><br>
                   <hr>
+
                   <p><%= user.about %></p>
               </div>
+
             </div>  
           </div>
       </div>
     </div>
   </div> 
+
 <!========================================
               Edit Modals
 ========================================-->
@@ -84,10 +87,7 @@
             </div>
             <div class="form-group">
               <input type="text" name="twitter" placeholder="Twitter Handle" class="form-twitter form-control" id="form-twitter" value="<%=user.twitter%>">
-            </div>
-            <div class="form-group">
-              <input type="password" name="password" placeholder="Enter current or new password" class="form-password form-control" value="<%=user.password%>" id="form-password" >
-            </div>                          
+            </div>                         
             <div class="form-group">
               <input type="text" name="about" placeholder="Update Bio" class="form-password form-control" value="<%=user.about%>" id="form-password" >
             </div>  
@@ -139,7 +139,7 @@
     <div class="modal-dialog modal-lg">
       <div id='delayed_status' class="modal-content"></div>
         <form action="/lounge">
-          <input type="submit" value="Enter Lounge" class="searchbtn" >
+          <input type="submit" value="Enter Lounge" class="enterlounge" >
         </form>
     </div>
   </div>
