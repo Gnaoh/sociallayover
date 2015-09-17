@@ -25,11 +25,18 @@ var UserSchema = new Schema({
 UserSchema.statics.createSecure = function (name, job, age, email, facebook, twitter, instagram, userName, password, about, cb) {
   // `_this` now references our schema
   var _this = this;
-  // generate some salt 
+  // generate some salt
 bcrypt.genSalt(function (err, salt) {
   //hash the password with salt
   bcrypt.hash(password, salt, function (err, hash) {
     // build the user object
+    /*
+        jc - this is too much. rewrite your db.User.createSecure
+        method to take a user object   Too many vars make my eyes bleed.
+        You can pass in user from your parameters up above to your create
+        call below.  
+    */
+
     var user = {
       name: name,
       job: job,
