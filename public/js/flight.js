@@ -58,9 +58,9 @@ $(document).ready(function() {
               flightstats.status = "CHECK INPUT";
             }
 
-            if (data.flightStatuses[i].delays.arrivalGateDelayMinutes === undefined) {
-              data.flightStatuses[i].delays.arrivalGateDelayMinutes = "0";
-            }
+            // if (data.flightStatuses[i].delays.arrivalGateDelayMinutes === undefined) {
+            //   data.flightStatuses[i].delays.arrivalGateDelayMinutes = "0";
+            // }
 
  /*========================================
           FLIGHT MODAL APPEND
