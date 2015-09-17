@@ -10,6 +10,7 @@ var express = require('express'),
     keygen = require('keygenerator'),
     methodOverride = require('method-override'),
     app = express();
+
 /*========================================
           MIDDLEWARE
 ========================================*/
@@ -83,15 +84,20 @@ app.get(["/", "/signup"], function (req, res) {
 // where the user submits the sign-up form
 app.post(["/users", "/signup"], function signup(req, res) {
   // grab the user from the params
-  var user = req.body.user;
+   user = req.body.user;
   // pull out their information
   var name = user.name;
+  var job = user.job;
+  var age = user.age;
   var email = user.email;
+  var facebook = user.facebook;
+  var twitter = user.twitter;
+  var instagram = instagram;
   var userName = user.userName;
   var password = user.password;
   var about = user.about;
   // create the new user
-  db.User.createSecure(name, email, userName, password, about, function(err, user) {
+  db.User.createSecure(name, job, age, email, facebook, twitter, instagram, userName, password, about, function(err, user) {
     if (err) {return console.log(err);}
     req.login(user);
     res.redirect("/profile"); 
@@ -102,19 +108,20 @@ app.post(["/users", "/signup"], function signup(req, res) {
 app.post("/updateProfile", function(req, res){
  
   req.currentUser(function(err, user){
-  var name = req.body.name;
-  var job = req.body.job;
-  var age = req.body.age;
-  var email = req.body.email;
-  var facebook = req.body.facebook;
-  var instagram = req.body.instagram;
-  var twitter = req.body.twitter;
-  var userName = req.body.userName;
-  var password = req.body.password;
-  var about = req.body.about;
+    name = req.body.name;
+    job = req.body.job;
+    age = req.body.age;
+    email = req.body.email;
+    facebook = req.body.facebook;
+    instagram = req.body.instagram;
+    twitter = req.body.twitter;
+    userName = req.body.userName;
+    password = req.body.password;
+    about = req.body.about;
+
     
- db.User.update({_id: user._id}, { $set: { email: email, password: password, name: name, job: job, age: age, facebook: facebook, instagram: instagram, twitter: twitter, userName: userName, about: about}}, function(err, user){
-  console.log("this is the new user", user)
+ db.User.update({_id: user._id}, 
+  { $set: { email: email, password: password, name: name, job: job, age: age, facebook: facebook, instagram: instagram, twitter: twitter, userName: userName, about: about}}, function(err, user){
   })
   res.redirect("/profile")
 
@@ -123,9 +130,9 @@ app.post("/updateProfile", function(req, res){
 
 // where the user submits the login form
 app.post(["/sessions", "/login"], function login(req, res) {
-  var user = req.body.user;
-  var userName = user.userName;
-  var password = user.password;
+   var user = req.body.user;
+   var userName = user.userName;
+   var password = user.password;
   // console.log(userName);
   // console.log(user);
 

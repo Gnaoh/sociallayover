@@ -27,7 +27,7 @@
   <div class="container">
     <hr class="featurette-divider">
     <div class="container">
-      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/profile.png" width="140" height="140" border="0" class="img-circle" name="aboutme"></a>
+      <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="static/img/default.jpg" width="140" height="140" border="0" class="img-circle" name="aboutme"></a>
       <h4><%=user.name%><br><small class="airline">San Francisco International Airport</small></h4>
 <!========================================
               ACTIVE USERS MODAL
@@ -41,18 +41,18 @@
             </div>
             <div class="modal-body">
               <center>
-                <img src="static/img/profile.png" width="140" height="140" border="0" class="img-circle">
-                <h3 class="media-heading"><%=user.name%><br><small>28, <%=user.job%></small></h3>
+                <img src="static/img/default.jpg" width="140" height="140" border="0" class="img-circle">
+                <h3 class="media-heading"><%=user.name%><br><small><%=user.age%>, <%=user.job%></small></h3>
               </center>
             <hr>
               <center>
                 <p class="text-left"><strong>Bio: </strong><br><%=user.about%></p>
                 <br>
-                  <a href="https://www.facebook.com/KyleHoang" target="blank">
+                  <a href="<%=user.facebook%>" target="blank">
                     <img src="static/img/facebook.png" alt="Home">
-                  <a href="https://instagram.com/hi.im.peter" target="blank">
+                  <a href="<%=user.instagram%>" target="blank">
                     <img src="static/img/instagram.png" alt="Home">
-                  <a href="https://twitter.com/PeterHoang_" target="blank">
+                  <a href="<%=user.twitter%>" target="blank">
                     <img src="static/img/twitter.png" alt="Home"></a>
               </center>
             </div>
