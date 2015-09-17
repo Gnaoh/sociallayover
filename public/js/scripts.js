@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 /*==============================================
                       MODALS
 ==============================================*/
-//Login Modals   
+//Login Modals
   $('#launch-modal-login').on('click', function(e){
     e.preventDefault();
       $( '#' + $(this).data('modals-id') ).modal();
@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
     $( ".thead" ).fadeToggle( "slow", "linear" )
   });
 
-//Edit Modals   
+//Edit Modals
   $('#launch-modal-edit').on('click', function(e){
     e.preventDefault();
       $( '#' + $(this).data('modals-id') ).modal();
@@ -30,17 +30,21 @@ jQuery(document).ready(function() {
   $('.registration-form input[type="text"], .registration-form textarea').on('focus', function() {
     $(this).removeClass('input-error');
   });
-    
+
   $('.registration-form').on('submit', function(e) {
     $(this).find('input[type="text"], textarea').each(function(){
+      /*
+        jc - consider popping the preventDefault out,
+        turning the code below into a ternary, then using
+        the toggleClass method
+        http://api.jquery.com/toggleclass/
+      */
       if ($(this).val() == "" ) {
         e.preventDefault();
           $(this).addClass('input-error');
       } else {
           $(this).removeClass('input-error');
       }
-    });      
+    });
   });
 });
-
-

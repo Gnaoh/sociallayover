@@ -22,7 +22,7 @@ app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use("/static", express.static("public"));
 app.use("/vendor", express.static("bower_components"));
-    
+
 // create the session
 app.use(
   session({
@@ -54,7 +54,7 @@ app.use(function (req, res, next) {
     req.user = null;
   }
   // call the next middleware in the stack
-  next(); 
+  next();
 });
 /*========================================
               ROUTES
@@ -83,6 +83,11 @@ app.get(["/", "/signup"], function (req, res) {
 
 // where the user submits the sign-up form
 app.post(["/users", "/signup"], function signup(req, res) {
+  /*
+      jc - this is too much. rewrite your db.User.createSecure
+      method to take a user object   Too many vars make my eyes bleed.
+  */
+
   // grab the user from the params
    user = req.body.user;
   // pull out their information
@@ -100,13 +105,13 @@ app.post(["/users", "/signup"], function signup(req, res) {
   db.User.createSecure(name, job, age, email, facebook, twitter, instagram, userName, password, about, function(err, user) {
     if (err) {return console.log(err);}
     req.login(user);
-    res.redirect("/profile"); 
+    res.redirect("/profile");
   });
 });
 
 // Update Profile
 app.post("/updateProfile", function(req, res){
- 
+
   req.currentUser(function(err, user){
     name = req.body.name;
     job = req.body.job;
@@ -119,11 +124,16 @@ app.post("/updateProfile", function(req, res){
     password = req.body.password;
     about = req.body.about;
 
-    
- db.User.update({_id: user._id}, 
+ /*
+    jc - nice. DB updates are for pros
+    There has to be a way to refactor this to not
+    be this long.
+ */
+
+ db.User.update({_id: user._id},
   { $set: { email: email, password: password, name: name, job: job, age: age, facebook: facebook, instagram: instagram, twitter: twitter, userName: userName, about: about}}, function(err, user){
   })
-  res.redirect("/profile")
+    res.redirect("/profile")
 
   })
 });
@@ -140,11 +150,12 @@ app.post(["/sessions", "/login"], function login(req, res) {
     if (err) {return res.redirect('/signup')}
     // login the user
     if(user === null){
-    res.redirect('/login')
+      res.redirect('/login')
     } else {
-    req.login(user);
+      req.login(user);
     // redirect to user profile
-    res.redirect("/profile");}
+      res.redirect("/profile");
+    }
   });
 });
 
