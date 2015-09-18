@@ -3,8 +3,12 @@
   <head>
     <% include ../partials/head %>
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/chat.css">
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
   </head>
 <body>
+
 <!========================================
               NAVIGATION
 ========================================-->     
@@ -69,10 +73,24 @@
     </div>
     <hr class="featurette-divider">
   </div>
+<!========================================
+              INDIVIDUAL CHAT MODAL
+========================================--> 
+  <div class="example-chat l-demo-container">
+    <header>Lounge Chat</header>
 
-      <div class="container">
-      <img src="static/img/chatroom.png" width="1041" height="545">
+    <div class='example-chat-toolbar'>
+      <label for="nameInput">Username:</label>
+      <input type='text' id='nameInput' placeholder='enter a username...'>
     </div>
+
+    <ul id='example-messages' class="example-chat-messages"></ul>
+
+    <footer>
+      <input type='text' id='messageInput'  placeholder='Type a message...'>
+    </footer>
+  </div>
+
   <footer>
     <% include ../partials/footer %>
   </footer>
