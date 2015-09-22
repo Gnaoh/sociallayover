@@ -28,12 +28,16 @@ thead {
 h2 {
   color: #FFF;
 }
-h1, h4, h5, h6 {
+h1, h5, h6 {
   color: #585f69;
   margin-top: 5px;
   text-shadow: none;
   font-weight: normal;
   font-family: 'Open Sans', sans-serif;
+}
+
+h4 {
+    color: white;
 }
 h2 {
   font-size: 24px;
