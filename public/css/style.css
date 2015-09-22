@@ -33,7 +33,6 @@ h1  {
 
 h2 {
   font-size: 37px;
-  line-height: 10px;
   font-weight: 100;
 }
 
@@ -66,6 +65,10 @@ img {
 div#edit_btn {
     float: right;
 }
+
+/*div#bs-example-navbar-collapse-1 {
+    float: right;
+}*/
 /*========================================
           FLIGHT STATUS 
 ========================================*/

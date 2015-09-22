@@ -133,10 +133,12 @@ app.post(["/sessions", "/login"], function login(req, res) {
    var user = req.body.user;
    var userName = user.userName;
    var password = user.password;
-  // console.log(userName);
-  // console.log(user);
+  console.log(userName);
+  console.log(user);
+  console.log(password);
 
   db.User.authenticate(userName, password, function (err, user) {
+    console.log("this is", user);
     if (err) {return res.redirect('/signup')}
     // login the user
     if(user === null){

@@ -89,20 +89,3 @@ $(document).ready(function() {
       })
     });
 });
-
-
-
-// if (data.flightStatuses[i].hasOwnProperty('delays')) {
-//                         $('#delayed_status').append("<div><p>" + "Departure Airport: " + display_info.departure_airport + "<br>"
-//                             + "Arrival Airport: " + display_info.arrival_airport + "<br>" + "Delayed Minutes: "
-//                             + data.flightStatuses[i].delays.departureGateDelayMinutes + "</p></div>");
-//                         $('#minutes').append("Flight is delayed for: " + "<br>" + data.flightStatuses[i].delays.departureGateDelayMinutes
-//                             + " minutes" + "<br>");
-//                         $('#delayed_modal').modal('show');
-//                     }
-//                     else {
-//                         $('#other_status').append("<div><p>" + " Departure Airport: " + display_info.departure_airport + "<br>"
-//                             + " Arrival Airport: " + display_info.arrival_airport + "<br>" + " Current Flight Status: "
-//                             + display_info.status + "<br>" + "</p></div>");
-//                         $('#other_modal').modal('show');
-//                     }
